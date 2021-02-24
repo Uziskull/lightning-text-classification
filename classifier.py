@@ -379,7 +379,7 @@ class Classifier(pl.LightningModule):
         )
         parser.add_argument(
             "--dev_csv",
-            default="data/imdb_reviews_test.csv",
+            default="data/imdb_reviews_dev.csv",
             type=str,
             help="Path to the file containing the dev data.",
         )
@@ -387,7 +387,7 @@ class Classifier(pl.LightningModule):
             "--test_csv",
             default="data/imdb_reviews_test.csv",
             type=str,
-            help="Path to the file containing the dev data.",
+            help="Path to the file containing the test data.",
         )
         parser.add_argument(
             "--loader_workers",

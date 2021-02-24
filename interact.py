@@ -2,6 +2,7 @@
 Runs a script to interact with a model using the shell.
 """
 import os
+import time
 from argparse import ArgumentParser, Namespace
 
 import pandas as pd
@@ -52,5 +53,8 @@ if __name__ == "__main__":
         input_sentence = input("> ")
         if input_sentence == "q" or input_sentence == "quit":
             break
+        start_time = time.time()
         prediction = model.predict(sample={"text": input_sentence})
+        final_time = time.time() - start_time
         print(prediction)
+        print("Time: {} seconds".format(final_time))
